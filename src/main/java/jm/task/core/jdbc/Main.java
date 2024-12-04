@@ -2,29 +2,22 @@ package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
-import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.util.Util;
-
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
         UserDao userDao = new UserDaoHibernateImpl();
 
         userDao.createUsersTable();
 
-        userDao.saveUser("John", "Doe", (byte) 30);
-        userDao.saveUser("Jane", "Doe", (byte) 25);
-        userDao.saveUser("Max", "Mustermann", (byte) 40);
-        userDao.saveUser("Anna", "Smith", (byte) 35);
-
-        List<User> users = userDao.getAllUsers();
-        System.out.println("Все пользователи:");
-        for (User user : users) {
-            System.out.println(user);
-        }
+        userDao.saveUser("Name1", "LastName1", (byte) 30);
+        userDao.saveUser("Name2", "LastName2", (byte) 25);
+        userDao.saveUser("Name3", "LastName3", (byte) 40);
+        userDao.saveUser("Name4", "LastName4", (byte) 35);
 
         userDao.removeUserById(1);
+
+        System.out.println(userDao.getAllUsers().toString());
 
         userDao.cleanUsersTable();
 

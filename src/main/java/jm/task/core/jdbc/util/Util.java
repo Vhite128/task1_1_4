@@ -19,9 +19,9 @@ public class Util {
 
                 Properties settings = new Properties();
                 settings.put("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
-                settings.put("hibernate.connection.url", "jdbc:mysql://localhost:3306/test_database?useSSL=false");
+                settings.put("hibernate.connection.url", "jdbc:mysql://localhost:3306/new_schema");
                 settings.put("hibernate.connection.username", "root");
-                settings.put("hibernate.connection.password", "31nehate");
+                settings.put("hibernate.connection.password", "UsersRoots!");
                 settings.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 
 
